@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4c9cb73-d438-4e1a-ba6c-25f1c1597ee8" name="Default Changelist" comment="[ADD] qiita, paper">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="aa95eeef-fb82-4c9a-a700-19dd867ce203" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectId" id="1mC8oFHWRvPzcRLScXmxRoVvzjv" />
+  <component name="ProjectId" id="1mNkdKNxZR3BAEYjH9AZtTZwDdZ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -21,30 +16,30 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mountain-king-html" />
-    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
-    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/keiouok.github.io/index.html" useBuiltInWebServerPort="true">
+    <configuration name="bootstrap.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/honoka/bootstrap.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="JavaScript Debug.bootstrap.html" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b4c9cb73-d438-4e1a-ba6c-25f1c1597ee8" name="Default Changelist" comment="" />
-      <created>1608986387641</created>
+      <changelist id="aa95eeef-fb82-4c9a-a700-19dd867ce203" name="Default Changelist" comment="" />
+      <created>1609341521933</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1608986387641</updated>
-      <workItem from="1608986390515" duration="14327000" />
-      <workItem from="1609234254606" duration="8640000" />
+      <updated>1609341521933</updated>
+      <workItem from="1609341523327" duration="31857000" />
     </task>
     <servers />
   </component>
@@ -52,19 +47,6 @@
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="[ADD] qiita, paper" />
-    <option name="LAST_COMMIT_MESSAGE" value="[ADD] qiita, paper" />
   </component>
 </project>
