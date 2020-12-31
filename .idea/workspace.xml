@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4c9cb73-d438-4e1a-ba6c-25f1c1597ee8" name="Default Changelist" comment="">
+    <list default="true" id="b4c9cb73-d438-4e1a-ba6c-25f1c1597ee8" name="Default Changelist" comment="[ADD] qiita, paper">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +21,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mountain-king-html" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -44,7 +44,7 @@
       <option name="presentableId" value="Default" />
       <updated>1608986387641</updated>
       <workItem from="1608986390515" duration="14327000" />
-      <workItem from="1609234254606" duration="3539000" />
+      <workItem from="1609234254606" duration="8640000" />
     </task>
     <servers />
   </component>
@@ -62,5 +62,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="[ADD] qiita, paper" />
+    <option name="LAST_COMMIT_MESSAGE" value="[ADD] qiita, paper" />
   </component>
 </project>

@@ -1,96 +1,1550 @@
-<!doctype html>
-<html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <title>Kononote</title>
-        <link rel="shortcut icon" href="yogiras.png">
-    </head>
-    <body>
-        <h1>Kononote -Ko's Note & Portfolio-</h1>
-        <img src="swing.jpg" width="500">
-        <h2>Profile</h2>
-            <p>胡 尤佳(Ko Yuka, Hu Youjia)</p>
-        <h2>History</h2>
-            <p>2013/04/01  京都府立南陽高等学校 普通科 入学</p>
-            <p>2016/03/31  京都府立南陽高等学校 普通科 卒業</p>
-            <p>2016/04/01  大阪府立大学 工学域 電気電子系学類 入学</p>
-            <p>2020/03/31  大阪府立大学 工学域 電気電子系学類 情報工学課程 卒業</p>
-            <p>2020/04/01  奈良先端科学技術大学院大学 先端科学技術研究科 先端科学技術専攻 情報科学領域 入学</p>
-            <p>2020/12/26  奈良先端科学技術大学院大学 先端科学技術研究科 先端科学技術専攻 情報科学領域 知能コミュニケーション研究室 在学</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <h2>My Research Interests</h2>
-        Natural Language Processing, Speech Translation, Machine Translation, Speech Recognition, Spoken Language Processing
+  <title>Kononote</title>
 
-        <h2>Published Papers</h2>
-        <ol>
-            <li>2019/08 胡尤佳, 岡田真, and 森直樹. "機械翻訳の前処理のための言い換え辞書自動作成手法の提案." 研究報告自然言語処理 (NL) 2019.17 (2019): 1-5.
-                <a href="https://ipsj.ixsq.nii.ac.jp/ej/?action=pages_view_main&active_action=repository_view_main_item_detail&item_id=198858&item_no=1&page_id=13&block_id=8">Paper</a></li>
-            <li>2021/03 Now Writing...</li>
-        </ol>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 
-        <h2>Coding Skills</h2>
-            <p>Python</p>
-            <li>PyTorch, Pandas, Numpy</li>
-            <p>bash(ShellScript)</p>
-            <p>vim, tmux</p>
-            <p>C++</p>
-            <p>C</p>
-            <p>Java</p>
-            <p>HTML/CSS</p>
-            <p>Kotlin</p>
-            <p>R</p>
-            <p>MATLAB</p>
-        <h2>Tool Skills</h2>
-            <p>Git</p>
-            <p>kaldi</p>
-            <p>ESPnet</p>
-            <p>OpenNMT</p>
+  <style type="text/css">
+  .bs-component + .bs-component {
+    margin-top: 1rem;
+  }
+  @media (min-width: 768px) {
+    .bs-docs-section {
+      margin-top: 8em;
+    }
+    .bs-component {
+      position: relative;
+    }
+    .bs-component .modal {
+      position: relative;
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: auto;
+      z-index: 1;
+      display: block;
+    }
+    .bs-component .modal-dialog {
+      width: 90%;
+    }
+    .bs-component .popover {
+      position: relative;
+      display: inline-block;
+      width: 220px;
+      margin: 20px;
+    }
+    .nav-tabs {
+      margin-bottom: 15px;
+    }
+    .progress {
+      margin-bottom: 10px;
+    }
+  }
+  </style>
+</head>
+<body>
 
-        <h2>Language Skills</h2>
-        <ol>
-            <li>Japanese : Native</li>
-            <li>English : Academic duscussion in English, 2018/10/28 TOEIC Listening & Reading Test 835</li>
-            <li>Chinese : Daily conversation</li>
-        </ol>
-        <h2>Certifications</h2>
-        <ol>
-            <li>2018/10/28 TOEIC Listening & Reading Test 835</li>
-            <li>2020/06/04 PASTアルゴリズム実技検定 初級(Advanced Beginner Class)</li>
-        </ol>
-<!--            <p>2020/06/04 PAST Practical Algorithm Skill Test Advanced Beginner Class</p>-->
+<header>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light p-4">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+<!--        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABN5JREFUeNrsnN1R4zAQgEUm75cOzlQQd4BTwZm3eyNUAKkgUAFQgc3bvREqwKkAUwGmA18FnBbWcxpjWyt5JYexd0aTScCW8mm1P/IqQkwySR85+o6Dfv8jIvkSyrZQPi5ky49+i3yUgBDKmWxxDUxdStky2R4lrNQLIBzcFjsvZMcbz2Cg78jictCqjRzvzrkGyYE+4OyBgBqvZMelQzCgJTeyrRlud26rTSaAAvnyqnzkDJLsCyYi0SwlUzmWYy1ML5qRSX7ePFM+AiP5hDPNpjWyAZgHZjjCVhNnhv9/X3sfon3ggPMBnGlJsYkpoKzhs0s0pH3grBFO6PC7Fs4B4TJr6mjbA86NA3vzZWJtjfTM4pqmQCxCI25qb8DWXDrUGIByKuGsbG8yt7jmRXH3qlxAzGHgwl0sKYByjhE1i3e1AdTWsYkdWigwo44vWzRMQtzlRCSYjJP4nGmJCRNtqNkyky+USe2DWCwwHJs3L0ZJC1xLV9oQHDQgFwNskL8df1seAqBiYEBdSzIcHJBNPuNRQs7Ux9ZIC58q3jBBYKi7BPLDUtGoRYMhh72iqyEALQ5Biwh/B00TFEjGgLhV2LDfEFvBYO9gd/LKhQaFnoBE2NcSg0luBxAAdF3EPRcHIggE2okQXuKpyuvm3IAWjEsmRiCx8G+/SsoTkEGWGPN+s62QEuvZECODdS8bZN3HmH3vOpJgds0RBpv4Nhp0wggKvFGKrdp2jdAwh4wOoaziH5gMk2D3YIw0AsvrRhOhBQjrhwIt0qQj11Vg6TuSjgaCtquBe++4bM+1L2Rkg4YKEi3k51DJqs4m7D1CyHzsKpgCCsTIZALEDEi3nVFOGtQt+dgBhdMSa3fxFDijXmLaGIi7PvC7AYrECMUEkC46zccOSOfByrED0i2xwvPYo4MBRKz9eRuzBlEAjXqJUdR51Eb65zfTIDZ7OOdaYi6CRLR9NnvTb74BRb60B1Oa6tBKMLQqzgkDpmyz5gxgYBJsD63UZUl5rMxlg5wmqaAxskHF6xNjbAPa9yrve+kDEEXNXyzhXMmXZ0dB38fTW6jF7vOwgQtQYQEnEUznPAjaZH3ohgJoyQ0INWft0dZan0yaEVXVCBAcTmkbDLrurfAv1Wki/0tMfdaNSyfpMO6J4Rgz8VmJAYf3jqD1gYSHZ1jjoICqPbqlg9pDMcjgFe9kS+uFBgzF6nB8a089x8pRvFAoX/5C878XhPtBTHXaUYHxi2HMiRxvRomTOOuDbgj2KiTAXmnKUziMe1XAxWKDtB4KTwzGDEHnrmtWsR/dJGSCdkBmTdnn4gAUthje3MIjxh3ejzrrUCR1T9SkLQegPUFdvxjZFk3QzWzQFK8oB34pIccOy+sKohYt+gJKLdb4rkdSCzCewSNiSzAdoeSEqtejalHcC1DDeXmKtA3ujnh9FUxuDYwyaOy18v7WoK/eXuzaAE7eVv6GsG+FG9mo3g+XeO++SIDwC1M72xBgc+8+pi1lvZS+Uq44iNLZra54Emd2xQgpxZrrrr7axnSuKwk2ymswbnhu8SZGP3aC3iMhxk/GcBr6gxTlTPw/n3FHqZc2TvxaXK71L8HgL71shdnGfCF6/i4QVawyY9SkKmPf4WB77f8i+OpwS9NJwcqbPvoAM8kkPPJPgAEAyEmTr+M2lQ0AAAAASUVORK5CYII=" width="30" height="30" class="d-inline-block align-top mr-1" alt="honoka">-->
+<!--        <img src="swing.jpg" width="30" height="30" class="d-inline-block align-top mr-1" alt="ko">-->
+        Kononote
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <h2>Development Products</h2>
-<!--        <h3>Android Counter</h3>-->
-        <ol>
-            <li>Android Counter</li>
-            <p>CLICKを押すと回数をカウントできます．</p>
-            <p>Language:Kotlin</p>
-            <p>Test Device:Galaxy S8</p>
-            <img src="counter.jpg" width="150">
-
-        </ol>
-
-
-        <h2>My Favorite Things</h2>
-        AtCoder(2019/02-, Highest 882, Green), SIGNATE(2019/02 NTT corevo challenge), Piano, Guitar, Road bike, Touring, Camping, Hill climb, Running, Marathon(Full Finisher:Fukuchiyama, Osaka, Nara)
-
-        <h2>My Favorite Places</h2>
-        けいはんな学研都市，NAIST，十三峠, 任意の県境と峠
-
-        <h2>Knowledge</h2>
-
-        <h2>Read Books</h2>
-
-        <h2>Contacts</h2>
-
-        <ul>
-            <li><a href="mailto:ko.yuka.kp2@is.naist.jp">NAIST Mail</a> <strong>ko.yuka.kp2@is.naist.jp</strong></li>
-            <li><a href="https://atcoder.jp/users/keiouok">AtCoder</a></li>
-            <li><a href="https://github.com/keiouok">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/yuka-ko-8189a41aa/">Linkedin</a></li>
-            <li><a href="https://twitter.com/keiouok">Twitter</a></li>
-            <li><a href="https://qiita.com/keiouok">Qiita</a></li>
-            <li><a href="https://keiouok.github.io/">Home</a></li>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Top <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown active">
+<!--            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--              Live demo-->
+<!--            </a>-->
+<!--            <div class="dropdown-menu" aria-labelledby="navbar-->
+<!--            Dropdown">-->
+<!--&lt;!&ndash;              <a class="dropdown-item" href="./bootstrap-ja.html">Japanese Page</a>&ndash;&gt;-->
+<!--&lt;!&ndash;              <a class="dropdown-item" href="./bootstrap.html">English Page</a>&ndash;&gt;-->
+<!--            </div>-->
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#education">Education</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#interests">Interest</a>
+          </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#papers">Paper</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#coding">Coding</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#tool">Tool</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#product">Product</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#my_favorite_thing">Favorite</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#link">Link</a>
+      </li>
         </ul>
-    </body>
+        <div style="font-size: 0.5rem;">
+<!--          <button type="button" class="btn btn-circle btn-lg"><i class="fab fa-github fa-3x"></i></button>-->
+<!--          <button type="button" class="btn btn-circle btn-lg"><i class="fab fa-twitter fa-3x"></i></button>-->
+        <i class="fab fa-github fa-3x"></i>
+        <i class="fab fa-twitter fa-3x"></i>
+        </div>
+<!--        <button type="button" class="btn btn-circle btn-lg"><i> <img src="logo_atcoder.svg" width="30px"></i></button>-->
+<!--&lt;!&ndash;        <button type="button" class="btn btn-xl btn-circle btn-lg"><i> <img src="qiita_logo.png" width="30px"></button>&ndash;&gt;-->
+<!--        <button type="button" class="btn btn-circle btn-lg"><i> <img src="qiita_logo.png" width="30px"></button>-->
+<!--        <button type="button" class="btn btn-circle btn-lg"><i> <img src="hatenablog-logo.svg" width="30px"></button>-->
+
+        <i> <img src="logo_atcoder.svg" width="30px"></i>
+        <i> <img src="qiita_logo.png" width="30px"></i>
+        <i> <img src="hatenablog-logo.svg" width="30px"></i>
+
+      </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!--NAIST Mail ko.yuka.kp2@is.naist.jp-->
+<!--AtCoder-->
+<!--GitHub-->
+<!--Linkedin-->
+<!--Twitter-->
+<!--Qiita-->
+<!--Home-->
+
+
+
+
+
+<!--<div class="container">-->
+  <div class="jumbotron  text-center backdrop" style="background:url(swing.jpg) center no-repeat; background-size:cover;">
+    <h1>Kononote</h1>
+    <a class="btn btn-outline-info" href="#education" role="education">Education</a>
+    <a class="btn btn-outline-info" href="#interests" role="interest">Interest</a>
+    <a class="btn btn-outline-info" href="#papers" role="paper">Paper</a>
+    <a class="btn btn-outline-info" href="#coding" role="coding">Coding</a>
+    <a class="btn btn-outline-info" href="#product" role="product">Product</a>
+    <a class="btn btn-outline-info" href="#my_favorite_thing" role="favorite">Favorite</a>
+    <a class="btn btn-outline-info" href="#link" role="link">Link</a>
+  </div>
+<!--</div>-->
+
+<div class="container">
+
+  <div class="page-header" id="banner">
+    <div class="row my-4">
+      <div class="col-12">
+<!--        <h1 class="display-">Kononote</h1>-->
+<!--        <img src="sakura.jpg" width="100" height="100" class="img-circle">　-->
+
+<!--        <h2 class="">Kononote <small class="text-muted">Ko's Note & Portfolio</small>-->
+<!--        </h2>-->
+<!--        <p class="lead">Ko's Note & Portfolio</p>-->
+      </div>
+    </div>
+  </div>
+
+  <div class=""contents>
+  <h2 id="education" class="contents_inner">Education</h2>
+  <p>Ko Yuka</p>
+  <p><i class="fas fa-graduation-cap"></i> 2013/04/01  京都府立南陽高等学校 普通科 入学</p>
+  <p>2016/03/31  京都府立南陽高等学校 普通科 卒業</p>
+  <p>2016/04/01  大阪府立大学 工学域 電気電子系学類 入学</p>
+  <p>2020/03/31  大阪府立大学 工学域 電気電子系学類 情報工学課程 卒業</p>
+  <p>2020/04/01  奈良先端科学技術大学院大学 先端科学技術研究科 先端科学技術専攻 情報科学領域 入学</p>
+  <p>2020/12/26  奈良先端科学技術大学院大学 先端科学技術研究科 先端科学技術専攻 情報科学領域 知能コミュニケーション研究室 在学</p>
+
+  <h2 id="interests" class="contents_inner">Interest</h2>
+  Natural Language Processing, Speech Translation, Machine Translation, Speech Recognition, Spoken Language Processing
+<!--    <button type="button" class="btn btn-default btn-circle"><i class="glyphicon glyphicon-ok"></i></button>-->
+<!--    <button type="button" class="btn btn-primary btn-circle"><i class="glyphicon glyphicon-list"></i></button>-->
+<!--    <button type="button" class="btn btn-success btn-circle"><i class="glyphicon glyphicon-link"></i></button>-->
+<!--    <button type="button" class="btn btn-info btn-circle"><i class="glyphicon glyphicon-ok"></i></button>-->
+<!--    <button type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-remove"></i></button>-->
+<!--    <button type="button" class="btn btn-danger btn-circle"><i class="glyphicon glyphicon-heart"></i></button>-->
+<!--    <h2>lg</h2>-->
+<!--    <button type="button" class="btn btn-default btn-circle btn-lg"><i class="glyphicon glyphicon-ok"></i></button>-->
+<!--    <button type="button" class="btn btn-primary btn-circle btn-lg"><i class="glyphicon glyphicon-list"></i></button>-->
+<!--    <button type="button" class="btn btn-success btn-circle btn-lg"><i class="glyphicon glyphicon-link"></i></button>-->
+<!--    <button type="button" class="btn btn-info btn-circle btn-lg"><i class="glyphicon glyphicon-ok"></i></button>-->
+<!--    <button type="button" class="btn btn-warning btn-circle btn-lg"><i class="glyphicon glyphicon-remove"></i></button>-->
+<!--    <button type="button" class="btn btn-danger btn-circle btn-lg"><i class="glyphicon glyphicon-heart"></i></button>-->
+<!--    <h2>xl</h2>-->
+<!--    <button type="button" class="btn btn-default btn-circle btn-xl"><i class="glyphicon glyphicon-ok"></i></button>-->
+<!--    <button type="button" class="btn btn-primary btn-circle btn-xl"><i class="glyphicon glyphicon-list"></i></button>-->
+<!--    <button type="button" class="btn btn-success btn-circle btn-xl"><i class="glyphicon glyphicon-link"></i></button>-->
+<!--    <button type="button" class="btn btn-info btn-circle btn-xl"><i class="glyphicon glyphicon-ok"></i></button>-->
+<!--    <button type="button" class="btn btn-warning btn-circle btn-xl"><i class="glyphicon glyphicon-remove"></i></button>-->
+<!--    <button type="button" class="btn btn-danger btn-circle btn-xl"><i class="glyphicon glyphicon-heart"></i></button>-->
+
+  <h2 id="papers" class="contents_inner">Paper</h2>
+  <ol>
+    <li>2019/08 胡尤佳, 岡田真, and 森直樹. "機械翻訳の前処理のための言い換え辞書自動作成手法の提案." 研究報告自然言語処理 (NL) 2019.17 (2019): 1-5.
+      <a href="https://ipsj.ixsq.nii.ac.jp/ej/?action=pages_view_main&active_action=repository_view_main_item_detail&item_id=198858&item_no=1&page_id=13&block_id=8">Paper</a></li>
+    <li>2021/03 Now Writing...</li>
+  </ol>
+<!--  <div id="coding" class="contents_inner">-->
+<!--    <h2>Coding</h2>-->
+    <section class="bs-docs-section">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="page-header">
+            <h2 id="coding" class="contents_inner">Coding</h2>
+          </div>
+<!--          <p>Python</p>-->
+<!--          <li>PyTorch, Pandas, Numpy</li>-->
+<!--          <p>bash(ShellScript)</p>-->
+<!--          <p>vim, tmux</p>-->
+<!--          <p>C++</p>-->
+<!--          <p>C</p>-->
+<!--          <p>Java</p>-->
+<!--          <p>HTML/CSS</p>-->
+<!--          <p>Kotlin</p>-->
+<!--          <p>R</p>-->
+<!--          <p>MATLAB</p>-->
+          <div class="bs-component">
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">Python [PyTorch, Numpy, Pandas]</div>
+            </div>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">bash, shellscript</div>
+            </div>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">vim</div>
+            </div>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">tmux</div>
+            </div>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">HTML/CSS</div>
+            </div>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">C++</div>
+            </div>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 45%;">C</div>
+            </div>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">Java</div>
+            </div>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">Kotlin</div>
+            </div>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">MATLAB</div>
+            </div>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 15%;">R</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+<!--  </div>-->
+
+    <!-- Progress bars
+================================================== -->
+    <section class="bs-docs-section">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="page-header">
+            <h2 id="tool" class="contents_inner">Tool</h2>
+          </div>
+          <div class="bs-component">
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">Git</div>
+            </div>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated bg-light" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">ESPnet</div>
+            </div>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">OpenNMT</div>
+            </div>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">kaldi</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- Progress bars
+================================================== -->
+  <section class="bs-docs-section">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-header">
+          <h2 id="language" class="contents_inner">Language</h2>
+        </div>
+        <div class="bs-component">
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 99%;">Japanese</div>
+          </div>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">English [TOEIC835, Academic discussion]</div>
+          </div>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">Chinese [Daily conversation]</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!--  <ol>-->
+<!--    <li>Japanese : Native</li>-->
+<!--    <li>English : Academic duscussion in English, 2018/10/28 TOEIC Listening & Reading Test 835</li>-->
+<!--    <li>Chinese : Daily conversation</li>-->
+<!--  </ol>-->
+
+<h2 id="certification" class="contents_inner">Certification</h2>
+  <ol>
+    <li>2018/10/28 TOEIC Listening & Reading Test 835</li>
+    <li>2020/06/04 PASTアルゴリズム実技検定 初級(Advanced Beginner Class)</li>
+  </ol>
+  <!--            <p>2020/06/04 PAST Practical Algorithm Skill Test Advanced Beginner Class</p>-->
+
+  <h2 id="product" class="contents_inner">Product</h2>
+  <!--        <h3>Android Counter</h3>-->
+  <ol>
+    <li>Android Counter</li>
+    <p>CLICKを押すと回数をカウントできます．</p>
+    <p>Language:Kotlin</p>
+    <p>Test Device:Galaxy S8</p>
+    <img src="counter.jpg" width="150">
+
+  </ol>
+
+  <h2 id="my_favorite_thing" class="contents_inner">My Favorite Thing</h2>
+  AtCoder(2019/02-, Highest 882, Green), SIGNATE(2019/02 NTT corevo challenge), Piano, Guitar, Road bike, Touring, Camping, Hill climb, Running, Marathon(Full Finisher:Fukuchiyama, Osaka, Nara)
+
+  <h2 id="my_favorite_place" class="contents_inner">My Favorite Place</h2>
+  けいはんな学研都市，NAIST，十三峠, 任意の県境と峠
+<!--  <h2>Knowledge</h2>-->
+<!--  <h2 id="book" class="contents_inner">Read Books</h2>-->
+
+  <h2 id="link" class="contents_inner">Link</h2>
+
+  <ul>
+    <li><a href="mailto:ko.yuka.kp2@is.naist.jp">NAIST Mail</a> <strong>ko.yuka.kp2@is.naist.jp</strong></li>
+    <li><a href="https://atcoder.jp/users/keiouok">AtCoder</a></li>
+    <li><a href="https://github.com/keiouok">GitHub</a></li>
+    <li><a href="https://www.linkedin.com/in/yuka-ko-8189a41aa/">Linkedin</a></li>
+    <li><a href="https://twitter.com/keiouok">Twitter</a></li>
+    <li><a href="https://qiita.com/keiouok">Qiita</a></li>
+    <li><a href="https://keiouok.github.io/">Home</a></li>
+  </ul>
+  </div>
+<!--</div>-->
+  <!-- Typography
+  ================================================== -->
+  <section class="bs-docs-section">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-header">
+<!--          <h1 id="typography">Typography</h1 id="typography">-->
+        </div>
+      </div>
+    </div>
+
+    <!-- Headings -->
+
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="bs-component">
+          <h1>Heading 1</h1>
+          <h2>Heading 2</h2>
+          <h3>Heading 3</h3>
+          <h4>Heading 4</h4>
+          <h5>Heading 5</h5>
+          <h6>Heading 6</h6>
+          <h3>
+            Heading
+            <small class="text-muted">with muted text</small>
+          </h3>
+          <p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="bs-component">
+          <h2>Example body text</h2>
+          <p>Nullam quis risus eget <a href="#">urna mollis ornare</a> vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+          <p><small>This line of text is meant to be treated as fine print.</small></p>
+          <p>The following is <strong>rendered as bold text</strong>.</p>
+          <p>The following is <em>rendered as italicized text</em>.</p>
+          <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
+        </div>
+
+      </div>
+      <div class="col-lg-4">
+        <div class="bs-component">
+          <h2>Emphasis classes</h2>
+          <p class="text-muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+          <p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+          <p class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
+          <p class="text-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
+          <p class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+          <p class="text-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Blockquotes -->
+
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 id="type-blockquotes">Blockquotes</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="bs-component">
+          <blockquote class="blockquote">
+            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+          </blockquote>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="bs-component">
+          <blockquote class="blockquote text-center">
+            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+          </blockquote>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="bs-component">
+          <blockquote class="blockquote text-right">
+            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tables
+  ================================================== -->
+  <section class="bs-docs-section">
+
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-header">
+
+          <h1 id="tables">Tables</h1>
+        </div>
+
+        <div class="bs-component">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Type</th>
+                <th scope="col">Column heading</th>
+                <th scope="col">Column heading</th>
+                <th scope="col">Column heading</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-active">
+                <th scope="row">Active</th>
+                <td>Column content</td>
+                <td>Column content</td>
+                <td>Column content</td>
+              </tr>
+              <tr>
+                <th scope="row">Default</th>
+                <td>Column content</td>
+                <td>Column content</td>
+                <td>Column content</td>
+              </tr>
+              <tr class="table-primary">
+                <th scope="row">Primary</th>
+                <td>Column content</td>
+                <td>Column content</td>
+                <td>Column content</td>
+              </tr>
+<!--              <tr class="table-secondary">-->
+<!--                <th scope="row">Secondary</th>-->
+<!--                <td>Column content</td>-->
+<!--                <td>Column content</td>-->
+<!--                <td>Column content</td>-->
+<!--              </tr>-->
+              <tr class="table-success">
+                <th scope="row">Success</th>
+                <td>Column content</td>
+                <td>Column content</td>
+                <td>Column content</td>
+              </tr>
+              <tr class="table-danger">
+                <th scope="row">Danger</th>
+                <td>Column content</td>
+                <td>Column content</td>
+                <td>Column content</td>
+              </tr>
+<!--              <tr class="table-warning">-->
+<!--                <th scope="row">Warning</th>-->
+<!--                <td>Column content</td>-->
+<!--                <td>Column content</td>-->
+<!--                <td>Column content</td>-->
+<!--              </tr>-->
+              <tr class="table-info">
+                <th scope="row">Info</th>
+                <td>Column content</td>
+                <td>Column content</td>
+                <td>Column content</td>
+              </tr>
+              <tr class="table-light">
+                <th scope="row">Light</th>
+                <td>Column content</td>
+                <td>Column content</td>
+                <td>Column content</td>
+              </tr>
+              <tr class="table-dark">
+                <th scope="row">Dark</th>
+                <td>Column content</td>
+                <td>Column content</td>
+                <td>Column content</td>
+              </tr>
+            </tbody>
+          </table>
+        </div><!-- /example -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Forms
+  ================================================== -->
+  <section class="bs-docs-section">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-header">
+          <h1 id="forms">Forms</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="bs-component">
+          <form>
+            <fieldset>
+              <legend>Legend</legend>
+              <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                  <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              </div>
+              <div class="form-group">
+                <label for="exampleSelect1">Example select</label>
+                <select class="form-control" id="exampleSelect1">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleSelect2">Example multiple select</label>
+                <select multiple class="form-control" id="exampleSelect2">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleTextarea">Example textarea</label>
+                <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputFile">File input</label>
+                <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+              </div>
+              <fieldset class="form-group">
+                <legend>Radio buttons</legend>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                    Option one is this and that&mdash;be sure to include why it's great
+                  </label>
+                </div>
+                <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+                    Option two can be something else and selecting it will deselect option one
+                  </label>
+                </div>
+                <div class="form-check disabled">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+                    Option three is disabled
+                  </label>
+                </div>
+              </fieldset>
+              <fieldset class="form-group">
+                <legend>Checkboxes</legend>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" value="" checked>
+                    Option one is this and that&mdash;be sure to include why it's great
+                  </label>
+                </div>
+                <div class="form-check disabled">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" value="" disabled>
+                    Option two is disabled
+                  </label>
+                </div>
+              </fieldset>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-4 offset-lg-1">
+
+        <form class="bs-component">
+          <div class="form-group">
+            <fieldset disabled>
+              <label class="control-label" for="disabledInput">Disabled input</label>
+              <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled="">
+            </fieldset>
+          </div>
+
+          <div class="form-group">
+            <fieldset>
+              <label class="control-label" for="readOnlyInput">Readonly input</label>
+              <input class="form-control" id="readOnlyInput" type="text" placeholder="Readonly input here…" readonly>
+            </fieldset>
+          </div>
+
+          <div class="form-group has-success">
+            <label class="form-control-label" for="inputSuccess1">Valid input</label>
+            <input type="text" value="correct value" class="form-control is-valid" id="inputValid">
+            <div class="valid-feedback">Success! You've done it.</div>
+          </div>
+
+          <div class="form-group has-danger">
+            <label class="form-control-label" for="inputDanger1">Invalid input</label>
+            <input type="text" value="wrong value" class="form-control is-invalid" id="inputInvalid">
+            <div class="invalid-feedback">Sorry, that username's taken. Try another?</div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-form-label col-form-label-lg" for="inputLarge">Large input</label>
+            <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" id="inputLarge">
+          </div>
+
+          <div class="form-group">
+            <label class="col-form-label" for="inputDefault">Default input</label>
+            <input type="text" class="form-control" placeholder="Default input" id="inputDefault">
+          </div>
+
+          <div class="form-group">
+            <label class="col-form-label col-form-label-sm" for="inputSmall">Small input</label>
+            <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" id="inputSmall">
+          </div>
+
+          <div class="form-group">
+            <label class="control-label">Input addons</label>
+            <div class="form-group">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">$</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                <div class="input-group-append">
+                  <span class="input-group-text">.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <div class="bs-component">
+          <fieldset>
+            <legend>Custom forms</legend>
+            <div class="form-group">
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked>
+                <label class="custom-control-label" for="customRadio1">Toggle this custom radio</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio2">Or toggle this other custom radio</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input" disabled>
+                <label class="custom-control-label" for="customRadio3">Disabled custom radio</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+                <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck2" disabled>
+                <label class="custom-control-label" for="customCheck2">Disabled custom checkbox</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="customSwitch1" checked="">
+                <label class="custom-control-label" for="customSwitch1">Toggle this switch element</label>
+              </div>
+              <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" disabled="" id="customSwitch2">
+                <label class="custom-control-label" for="customSwitch2">Disabled switch element</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <select class="custom-select">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <div class="input-group mb-3">
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="inputGroupFile02">
+                  <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+                </div>
+                <div class="input-group-append">
+                  <span class="input-group-text" id="">Upload</span>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Navs
+  ================================================== -->
+  <section class="bs-docs-section">
+
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-header">
+          <h1 id="navs">Navs</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-bottom: 2rem;">
+      <div class="col-lg-6">
+        <h2 id="nav-tabs">Tabs</h2>
+        <div class="bs-component">
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+<!--              <a class="nav-link" data-toggle="tab" href="#profile">Profile</a>-->
+              <a class="nav-link" data-toggle="tab" href="#education">Education</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+              </div>
+            </li>
+          </ul>
+          <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade show active" id="home">
+              <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+            </div>
+            <div class="tab-pane fade" id="profile">
+              <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+            </div>
+            <div class="tab-pane fade" id="dropdown1">
+              <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork.</p>
+            </div>
+            <div class="tab-pane fade" id="dropdown2">
+              <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <h2 id="nav-pills">Pills</h2>
+        <div class="bs-component">
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link active" href="#education">Active</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#education">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+        </div>
+        <br>
+        <div class="bs-component">
+          <ul class="nav nav-pills flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Active</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <h2 id="nav-breadcrumbs">Breadcrumbs</h2>
+        <div class="bs-component">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Home</li>
+          </ol>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Library</li>
+          </ol>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Library</a></li>
+            <li class="breadcrumb-item active">Data</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <h2 id="pagination">Pagination</h2>
+        <div class="bs-component">
+          <div>
+            <ul class="pagination">
+              <li class="page-item disabled">
+                <a class="page-link" href="#">&laquo;</a>
+              </li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">2</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">3</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">4</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">5</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">&raquo;</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <ul class="pagination pagination-lg">
+              <li class="page-item disabled">
+                <a class="page-link" href="#">&laquo;</a>
+              </li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">2</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">3</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">4</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">5</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">&raquo;</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <ul class="pagination pagination-sm">
+              <li class="page-item disabled">
+                <a class="page-link" href="#">&laquo;</a>
+              </li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">2</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">3</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">4</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">5</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">&raquo;</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Indicators
+  ================================================== -->
+  <section class="bs-docs-section">
+
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-header">
+          <h1 id="indicators">Indicators</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <h2>Alerts</h2>
+        <div class="bs-component">
+          <div class="alert alert-dismissible alert-warning">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <h4 class="alert-heading">Warning!</h4>
+            <p class="mb-0">Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, <a href="#" class="alert-link">vel scelerisque nisl consectetur et</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="bs-component">
+          <div class="alert alert-dismissible alert-danger">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="bs-component">
+          <div class="alert alert-dismissible alert-success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="bs-component">
+          <div class="alert alert-dismissible alert-info">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your attention</a>, but it's not super important.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2>Badges</h2>
+      <div class="bs-component" style="margin-bottom: 40px;">
+<!--        <span class="badge badge-primary">Python3</span>-->
+<!--        <span class="badge badge-secondary"></span>-->
+<!--        <span class="badge badge-success">Success</span>-->
+<!--        <span class="badge badge-danger">Danger</span>-->
+<!--        <span class="badge badge-warning">Warning</span>-->
+        <span class="badge badge-info">Python3</span>
+<!--        <span class="badge badge-light">Light</span>-->
+<!--        <span class="badge badge-dark">Dark</span>-->
+      </div>
+      <div class="bs-component">
+<!--        <span class="badge badge-pill badge-primary">Primary</span>-->
+<!--        <span class="badge badge-pill badge-secondary">Secondary</span>-->
+<!--        <span class="badge badge-pill badge-success">Success</span>-->
+<!--        <span class="badge badge-pill badge-danger">Danger</span>-->
+<!--        <span class="badge badge-pill badge-warning">Warning</span>-->
+        <span class="badge badge-pill badge-info">Japanese</span>
+        <span class="badge badge-pill badge-info">English</span>
+        <span class="badge badge-pill badge-info">Chinese</span>
+<!--        <span class="badge badge-pill badge-light">Light</span>-->
+<!--        <span class="badge badge-pill badge-dark">Dark</span>-->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Progress bars
+  ================================================== -->
+  <section class="bs-docs-section">
+
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-header">
+          <h1 id="progress">Progress</h1>
+        </div>
+
+        <h3 id="progress-basic">Basic</h3>
+        <div class="bs-component">
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+
+        <h3 id="progress-alternatives">Contextual alternatives</h3>
+        <div class="bs-component">
+          <div class="progress">
+            <div class="progress-bar bg-success" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <div class="progress">
+            <div class="progress-bar bg-info" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <div class="progress">
+            <div class="progress-bar bg-warning" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <div class="progress">
+            <div class="progress-bar bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+
+        <h3 id="progress-multiple">Multiple bars</h3>
+        <div class="bs-component">
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 15%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar bg-success" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar bg-info" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+
+        <h3 id="progress-striped">Striped</h3>
+        <div class="bs-component">
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+
+        <h3 id="progress-animated">Animated</h3>
+        <div class="bs-component">
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Spinners
+  ================================================== -->
+  <section class="bs-docs-section">
+
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-header">
+          <h1 id="spinners">Spinners</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 ">
+        <h3 id="spinners-border">Border Spinners</h3>
+        <div class="bs-component d-flex justify-content-around">
+          <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-border text-secondary" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-border text-success" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-border text-danger" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-border text-warning" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-border text-info" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-border text-light" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-border text-dark" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <h3 id="spinners-growing">Growing spinners</h3>
+        <div class="bs-component d-flex justify-content-around">
+          <div class="spinner-grow" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-grow text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-grow text-secondary" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-grow text-success" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-grow text-danger" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-grow text-warning" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-grow text-info" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-grow text-light" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-grow text-dark" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Containers
+  ================================================== -->
+  <section class="bs-docs-section">
+
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-header">
+          <h1 id="containers">Containers</h1>
+        </div>
+        <div class="bs-component">
+          <div class="jumbotron">
+            <h1 class="display-3">Hello, world!</h1>
+            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+            <hr class="my-4">
+            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            <p class="lead">
+              <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-lg-12">
+        <h2>List groups</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="bs-component">
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Cras justo odio
+              <span class="badge badge-primary badge-pill">14</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Dapibus ac facilisis in
+              <span class="badge badge-primary badge-pill">2</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Morbi leo risus
+              <span class="badge badge-primary badge-pill">1</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="bs-component">
+          <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action active">
+              Cras justo odio
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in
+            </a>
+            <a href="#" class="list-group-item list-group-item-action disabled">Morbi leo risus
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="bs-component">
+          <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">List group item heading</h5>
+                <small>3 days ago</small>
+              </div>
+              <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+              <small>Donec id elit non mi porta.</small>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">List group item heading</h5>
+                <small class="text-muted">3 days ago</small>
+              </div>
+              <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+              <small class="text-muted">Donec id elit non mi porta.</small>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <h2>Cards</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="bs-component">
+          <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h4 class="card-title">Primary card title</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h4 class="card-title">Secondary card title</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card text-white bg-success mb-3" style="max-width: 20rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h4 class="card-title">Success card title</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card text-white bg-danger mb-3" style="max-width: 20rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h4 class="card-title">Danger card title</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card text-white bg-warning mb-3" style="max-width: 20rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h4 class="card-title">Warning card title</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h4 class="card-title">Info card title</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card bg-light mb-3" style="max-width: 20rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h4 class="card-title">Light card title</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h4 class="card-title">Dark card title</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="bs-component">
+          <div class="card border-primary mb-3" style="max-width: 20rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h4 class="card-title">Primary card title</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card border-secondary mb-3" style="max-width: 20rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h4 class="card-title">Secondary card title</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card border-success mb-3" style="max-width: 20rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h4 class="card-title">Success card title</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card border-danger mb-3" style="max-width: 20rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h4 class="card-title">Danger card title</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card border-warning mb-3" style="max-width: 20rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h4 class="card-title">Warning card title</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card border-info mb-3" style="max-width: 20rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h4 class="card-title">Info card title</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card border-light mb-3" style="max-width: 20rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h4 class="card-title">Light card title</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card border-dark mb-3" style="max-width: 20rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h4 class="card-title">Dark card title</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="bs-component">
+          <div class="card mb-3">
+            <h3 class="card-header">Card header</h3>
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <h6 class="card-subtitle text-muted">Support card subtitle</h6>
+            </div>
+            <img style="height: 200px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_158bd1d28ef%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_158bd1d28ef%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22129.359375%22%20y%3D%2297.35%22%3EImage%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Card image">
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Cras justo odio</li>
+              <li class="list-group-item">Dapibus ac facilisis in</li>
+              <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+            <div class="card-footer text-muted">
+              2 days ago
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Card title</h4>
+              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Dialogs
+  ================================================== -->
+  <section class="bs-docs-section">
+
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-header">
+          <h1 id="dialogs">Dialogs</h1>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <h2>Modals</h2>
+        <div class="bs-component">
+          <div class="modal">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Modal title</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p contenteditable>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2>Toast</h2>
+        <div class="bs-component d-flex justify-content-center p-md-4">
+          <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+              <svg class="bd-placeholder-img rounded mr-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect fill="#007aff" width="100%" height="100%"></rect></svg>
+              <strong class="mr-auto">Bootstrap</strong>
+              <small>11 mins ago</small>
+              <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="toast-body">
+              Hello, world! This is a toast message.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <h2>Popovers</h2>
+        <div class="bs-component" style="margin-bottom: 3em;">
+          <button type="button" class="btn btn-secondary" title="Popover Title" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Left</button>
+
+          <button type="button" class="btn btn-secondary" title="Popover Title" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Top</button>
+
+          <button type="button" class="btn btn-secondary" title="Popover Title" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+          sagittis lacus vel augue laoreet rutrum faucibus.">Bottom</button>
+
+          <button type="button" class="btn btn-secondary" title="Popover Title" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Right</button>
+        </div>
+        <h2>Tooltips</h2>
+        <div class="bs-component">
+          <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Left</button>
+
+          <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Top</button>
+
+          <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Bottom</button>
+
+          <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Right</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="./js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+  $('.bs-component [data-toggle="popover"]').popover();
+  $('.bs-component [data-toggle="tooltip"]').tooltip();
+</script>
+</body>
 </html>
