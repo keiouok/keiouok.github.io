@@ -10516,4 +10516,10 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
+/*black icon*/
 .fa-color{color:#2c3034}
+
+/*image centering*/
+.img_center{
+  text-align:center;
+}
