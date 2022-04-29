@@ -10523,3 +10523,16 @@ a.text-dark:hover, a.text-dark:focus {
 .img_center{
   text-align:center;
 }
+
+button[aria-expanded="true"] > span {
+  position: relative;
+  display: none;
+}
+ 
+button[aria-expanded="true"]::after {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  content: "✕";
+}
